@@ -1,0 +1,314 @@
+[
+  {
+    "_id": "81b22f82-b3a0-45d8-8b7d-ee8c086458d9",
+    "colId": "5682d6d8-60c4-40fb-949d-d767139e3ac6",
+    "containerId": "",
+    "name": "Login",
+    "url": "{{HOST}}/users/login",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-12-10T07:37:23.360Z",
+    "modified": "2022-12-10T07:56:45.117Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"k111a@gmail.com\", \n  \"password\":\"password\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "b5da3974-0c90-49c0-bc8d-af2bf3a34ca5",
+    "colId": "5682d6d8-60c4-40fb-949d-d767139e3ac6",
+    "containerId": "",
+    "name": "Signup",
+    "url": "{{HOST}}/users/signup",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2022-12-10T07:37:35.069Z",
+    "modified": "2022-12-10T07:51:21.431Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"k111a@gmail.com\", \n  \"password\":\"password\",\n  \"name\":\"kia khan\",\n  \"country_code\":\"91\",\n  \"mobile\":\"2713072219\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "542aab1f-1910-458a-b1bc-abfa9af0b585",
+    "colId": "5682d6d8-60c4-40fb-949d-d767139e3ac6",
+    "containerId": "",
+    "name": "Get Single User",
+    "url": "",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-12-10T07:37:47.251Z",
+    "modified": "2022-12-10T07:37:47.251Z",
+    "headers": []
+  },
+  {
+    "_id": "bf12bb7d-31a7-4465-8ab7-7721516f3c1e",
+    "colId": "03e55acc-050d-41e6-b80f-591f17317b49",
+    "containerId": "",
+    "name": "Add Restaurant",
+    "url": "{{HOST}}/restaurants",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-12-10T07:38:18.371Z",
+    "modified": "2022-12-10T08:04:25.321Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\r\n    \"name\": \"Vishal nath\",\r\n    \"mobile\": \"7733072219\",\r\n    \"country_code\": \"+91\",\r\n    \"email\": \"vncivhs@gmail.com\",\r\n    \"address\": \"sdfbciusb fcsuefhck shcgs\",\r\n    \"pan\": \"CIKPC!@#3h\"\r\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "98171c36-51ba-4181-9972-d0f15ac83980",
+    "colId": "03e55acc-050d-41e6-b80f-591f17317b49",
+    "containerId": "",
+    "name": "Get Restaurant",
+    "url": "{{HOST}}/restaurants/?id=63943da66c0f31722808c482",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-12-10T07:38:25.236Z",
+    "modified": "2022-12-10T08:05:42.530Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "63943da66c0f31722808c482",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "5f3b5edf-4c1d-4518-8b3b-9c598181b1ef",
+    "colId": "03e55acc-050d-41e6-b80f-591f17317b49",
+    "containerId": "",
+    "name": "Update Restaurant",
+    "url": "{{HOST}}/restaurants/update?id=63943da66c0f31722808c482",
+    "method": "PATCH",
+    "sortNum": 40000,
+    "created": "2022-12-10T07:38:38.820Z",
+    "modified": "2022-12-10T08:06:44.772Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "63943da66c0f31722808c482",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"vishal@gmail.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "0328facc-5fc9-4d0d-bf02-c7f0fdd3ba6e",
+    "colId": "fbe3ff5b-832c-40a6-b570-1bd336589e92",
+    "containerId": "",
+    "name": "Add Dish",
+    "url": "{{HOST}}/dishes",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2022-12-10T07:38:52.644Z",
+    "modified": "2022-12-10T08:24:53.489Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"code\": \"DISH001\",\n  \"name\": \"Dish 1\",\n  \"cost_price\": \"30\",\n  \"sell_price\": \"50\",\n  \"type\": \"VEG\",\n  \"cuisine\": \"INDIAN\",\n  \"image\": \"https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe.jpg\",\n  \"units\": [ {\"qty\":1,\"unit\":  \"HALF\", \"price\":\"400\"}],\n  \"prep_time\": \"20\",\n  \"restaurant\":\"63943da66c0f31722808c482\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bff62d09-1b23-4b0d-a411-44dac0344eea",
+    "colId": "fbe3ff5b-832c-40a6-b570-1bd336589e92",
+    "containerId": "",
+    "name": "Update Dish",
+    "url": "{{HOST}}/dishes/update?id=6394427b2da549e2b32e9bc6",
+    "method": "PATCH",
+    "sortNum": 20000,
+    "created": "2022-12-10T07:38:56.798Z",
+    "modified": "2022-12-10T08:26:54.347Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "6394427b2da549e2b32e9bc6",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"Dish by Vishal\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "343802ca-f263-4a1b-9bef-dc38a2bcd7c4",
+    "colId": "fbe3ff5b-832c-40a6-b570-1bd336589e92",
+    "containerId": "",
+    "name": "Delete Dish",
+    "url": "{{HOST}}/dishes?id=6394427b2da549e2b32e9bc6",
+    "method": "DELETE",
+    "sortNum": 30000,
+    "created": "2022-12-10T07:39:10.963Z",
+    "modified": "2022-12-10T08:27:21.260Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "6394427b2da549e2b32e9bc6",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "cd34c9ac-d374-4fbb-9573-a4a427daf66f",
+    "colId": "fbe3ff5b-832c-40a6-b570-1bd336589e92",
+    "containerId": "",
+    "name": "Get All Dishes",
+    "url": "{{HOST}}/dishes/all",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-12-10T08:15:37.689Z",
+    "modified": "2022-12-10T08:27:44.440Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "9dc4b7d0-8d61-4d6a-9de9-7faae9885c0a",
+    "colId": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "containerId": "",
+    "name": "Create Order",
+    "url": "",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-12-10T08:28:27.911Z",
+    "modified": "2022-12-10T08:28:27.911Z",
+    "headers": []
+  },
+  {
+    "_id": "9c995ca7-bdfa-45d3-b822-1658bde4deac",
+    "colId": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "containerId": "",
+    "name": "Create Order",
+    "url": "",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-12-10T08:28:39.444Z",
+    "modified": "2022-12-10T08:28:39.444Z",
+    "headers": []
+  },
+  {
+    "_id": "75377313-f135-48a7-97e3-debb957c1cb2",
+    "colId": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "containerId": "",
+    "name": "Update Order",
+    "url": "",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-12-10T08:28:50.779Z",
+    "modified": "2022-12-10T08:28:50.779Z",
+    "headers": []
+  },
+  {
+    "_id": "4a335289-e4d7-47b8-a967-7f6449dd1dd6",
+    "colId": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "containerId": "",
+    "name": "Cancel Order",
+    "url": "",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-12-10T08:29:02.230Z",
+    "modified": "2022-12-10T08:29:02.230Z",
+    "headers": []
+  },
+  {
+    "_id": "5a54a6b5-262c-4afb-94a4-8ac2392afbf5",
+    "colId": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "containerId": "",
+    "name": "Update Order Client",
+    "url": "",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-12-10T08:29:31.899Z",
+    "modified": "2022-12-10T08:29:31.899Z",
+    "headers": []
+  },
+  {
+    "_id": "ea65690e-6712-4130-8897-dc21d919f9a8",
+    "colId": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
+    "containerId": "",
+    "name": "Create Cart",
+    "url": "",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2022-12-10T08:29:53.458Z",
+    "modified": "2022-12-10T08:29:53.458Z",
+    "headers": []
+  },
+  {
+    "_id": "9b74eaf3-884f-4f99-98c0-72a1732c28e1",
+    "colId": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
+    "containerId": "",
+    "name": "Update Cart",
+    "url": "",
+    "method": "GET",
+    "sortNum": 20000,
+    "created": "2022-12-10T08:29:58.683Z",
+    "modified": "2022-12-10T08:29:58.683Z",
+    "headers": []
+  },
+  {
+    "_id": "083fef2c-58c2-44d8-a35e-8d8dc62ae26c",
+    "colId": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
+    "containerId": "",
+    "name": "Delete Cart",
+    "url": "",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2022-12-10T08:30:04.248Z",
+    "modified": "2022-12-10T08:30:04.248Z",
+    "headers": []
+  },
+  {
+    "_id": "8b3d36e5-93f2-440c-9340-cf354616e816",
+    "colId": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
+    "containerId": "",
+    "name": "Get Cart",
+    "url": "",
+    "method": "GET",
+    "sortNum": 40000,
+    "created": "2022-12-10T08:30:24.354Z",
+    "modified": "2022-12-10T08:30:24.354Z",
+    "headers": []
+  },
+  {
+    "_id": "07751e47-8b54-4f80-8eb7-b1cd078843af",
+    "colId": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "containerId": "",
+    "name": "Get Order",
+    "url": "",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-12-10T08:30:32.964Z",
+    "modified": "2022-12-10T08:30:32.964Z",
+    "headers": []
+  }
+]

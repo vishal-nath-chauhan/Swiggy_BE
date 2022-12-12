@@ -4,14 +4,14 @@ import Dishes from "../models/dishes.schema";
 
 
 const addDish = asyncHandler(async (req: any, res: any, next: any) => {
-    const { code, name, cost_price, sell_price, type, address, cuisine, image, units, prep_time } = req.body;
+    const { code, name, cost_price, sell_price, type, cuisine, image, units, prep_time, restaurant } = req.body;
 
-    if (!code || !name || !cost_price || !type || !address || !cuisine || !sell_price || !image || !units || !prep_time) return sendError(STATUS.BAD_REQUEST, 'Please send all required fields.', res);
+    if (!code || !name || !cost_price || !type || !cuisine || !sell_price || !image || !units || !prep_time || !restaurant) return sendError(STATUS.BAD_REQUEST, 'Please send all required fields.', next);
 
     const isDishExists = await Dishes.findOne({ code }).lean();
     if (isDishExists) return sendError(STATUS.BAD_REQUEST, 'Dish with same details exists.', next)
 
-    const result = (await Dishes.create({ code, name, cost_price, sell_price, type, address, cuisine, image, units, prep_time })).toObject();
+    const result = (await Dishes.create({ code, name, cost_price, sell_price, type, cuisine, image, units, prep_time, restaurant })).toObject();
     if (!result) return sendError(STATUS.SERVER_ERROR, 'Failed to Add Dish', next)
 
     return sendResponse(result, res);

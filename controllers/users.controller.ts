@@ -17,6 +17,9 @@
 
 import { asyncHandler, sendError, sendResponse, STATUS } from "../common/common.helper";
 import Users from "../models/users.schema";
+import bcrypt from "bcrypt";
+import * as jwt from 'jsonwebtoken'
+
 
 const addUser = asyncHandler(async (req: any, res: any, next: any) => {
 
@@ -72,7 +75,68 @@ const getAllUsers = asyncHandler(async (req: any, res: any, next: any) => {
 
 });
 
-const loginUser = asyncHandler(async (req: any, res: any, next: any) => { });
+
+const signUpUser = asyncHandler(async (req: any, res: any, next: any) => {
+
+    const { email, password, name, country_code, mobile } = req.body;
+    console.log({ email, password, name, country_code, mobile });
+
+
+    const isUserExists = await Users.findOne({ email });
+    // if (isUserExists) return sendError(STATUS.BAD_REQUEST, "This user already exists", next)
+
+
+    const encrytedPassword = await bcrypt.hash(password, 10);
+
+    const response = (await Users.create({
+        email,
+        password: encrytedPassword,
+        name, country_code, mobile
+    })).toObject();
+
+    console.log(response)
+
+    const id = response?._id;
+    delete response._id;
+    delete response.__v;
+
+    const secret = String(process.env.JWT_SECRET)
+    const jwtToken = jwt.sign({ email, id: response._id }, secret)
+
+
+    return sendResponse({ user: response, token: jwtToken }, res)
+
+});
+
+const loginUser = asyncHandler(async (req: any, res: any, next: any) => {
+
+    const { email, password } = req.body;
+
+    const isUserExists = await Users.findOne({ email }).lean() ;
+    if (!isUserExists) return sendError(STATUS.BAD_REQUEST, "This user does not exists", next)
+
+    const verified = await bcrypt.compare(password, isUserExists.password)
+    console.log("VERTIED  ", verified);
+
+    if (verified) {
+
+        const secret = String(process.env.JWT_SECRET)
+        const { _id, __v, ...user } = isUserExists;
+        const id = _id;
+        // delete isUserExists?._id;
+        // delete isUserExists.__v;
+        const jwtToken = jwt.sign({ email, id }, secret)
+
+
+        return sendResponse({ user: { id, ...user }, token: jwtToken }, res)
+    }
+
+
+    console.log('USER  EXISTST ', isUserExists)
+
+
+
+});
 
 const index = {
     addUser,
@@ -81,5 +145,6 @@ const index = {
     getUser,
     getAllUsers,
     loginUser,
+    signUpUser
 };
 export default index;

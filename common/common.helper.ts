@@ -1,4 +1,5 @@
 import AppError from "../AppError";
+import bcrypt from "bcrypt";
 
 export enum STATUS {
     SUCCESS = 200,
@@ -13,7 +14,6 @@ export const asyncHandler = (fn: any) => (req: any, res: any, next: any) => fn(r
 
 
 export const sendResponse = (data: any, res: any, keepId = true) => {
-    // if (status !== STATUS.SUCCESS) return res.status(status).json({ success: false, message: data });
     const response = data;
 
 
@@ -32,4 +32,6 @@ export const sendError = (status: STATUS, message: string, next: any) => next(ne
 
 export const isValidMongoDbId = (id: String) => (/^[0-9a-fA-F]{24}$/).test(String(id))
 
+const saltRounds = process.env.REACT_SALT_ROUNDS
+// export const encryptString = async (text: string) => await bcrypt.hash(text, saltRounds)
 

@@ -1,0 +1,37 @@
+[
+  {
+    "_id": "5682d6d8-60c4-40fb-949d-d767139e3ac6",
+    "colName": "Users",
+    "created": "2022-12-10T07:37:13.027Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "03e55acc-050d-41e6-b80f-591f17317b49",
+    "colName": "Restaurant",
+    "created": "2022-12-10T07:38:09.976Z",
+    "sortNum": 20000,
+    "folders": []
+  },
+  {
+    "_id": "fbe3ff5b-832c-40a6-b570-1bd336589e92",
+    "colName": "Dishes",
+    "created": "2022-12-10T07:38:46.474Z",
+    "sortNum": 30000,
+    "folders": []
+  },
+  {
+    "_id": "168eb3b4-840a-4f9a-9f22-d3381b44c087",
+    "colName": "Orders",
+    "created": "2022-12-10T08:28:18.110Z",
+    "sortNum": 40000,
+    "folders": []
+  },
+  {
+    "_id": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
+    "colName": "Cart",
+    "created": "2022-12-10T08:29:46.830Z",
+    "sortNum": 50000,
+    "folders": []
+  }
+]

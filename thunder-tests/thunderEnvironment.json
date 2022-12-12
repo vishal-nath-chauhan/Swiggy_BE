@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "91164779-6f47-486a-acf4-d648c696bf63",
+    "name": "(Global Env)",
+    "default": false,
+    "global": true,
+    "sortNum": -2,
+    "created": "2022-12-10T07:35:45.614Z",
+    "modified": "2022-12-10T07:35:45.614Z",
+    "data": [
+      {
+        "name": "HOST",
+        "value": "http://localhost:5000/api/v1"
+      }
+    ]
+  }
+]

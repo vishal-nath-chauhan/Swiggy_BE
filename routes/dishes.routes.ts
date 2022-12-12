@@ -1,9 +1,12 @@
-import DishController from "../controllers/dishes.controller.js";
+import DishController from "../controllers/dishes.controller";
 import { Router } from "express";
 
 const routes = Router();
 
-routes.get("/", DishController.getDish).delete("/", DishController.deleteDish).post("/", DishController.addDish);
+routes.get("/", DishController.getDish)
+    .delete("/", DishController.deleteDish)
+    .post("/", DishController.addDish);
+
 routes.get("/all", DishController.getAllDishes);
 routes.patch("/update", DishController.updateDish);
 
