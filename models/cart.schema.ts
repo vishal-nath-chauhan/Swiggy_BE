@@ -14,7 +14,8 @@ const CartSchema = new Schema({
 			id: SchemaTypes.ObjectId, //addon  id
 			itemId: SchemaTypes.ObjectId // item ID
 		}
-	]
+	],
+	user : SchemaTypes.ObjectId
 });
 
 const Cart = model("cart", CartSchema);

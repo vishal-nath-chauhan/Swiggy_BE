@@ -256,12 +256,18 @@
     "colId": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
     "containerId": "",
     "name": "Create Cart",
-    "url": "",
-    "method": "GET",
+    "url": "{{HOST}}/carts/create",
+    "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T08:29:53.458Z",
-    "modified": "2022-12-10T08:29:53.458Z",
-    "headers": []
+    "modified": "2022-12-12T03:06:15.182Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTQzYTc5NmRkNTQ3ZWRhOTk0MDE5YiIsImlhdCI6MTY3MDgxMzc0NiwiZXhwIjoxNjcwOTAwMTQ2fQ.6FBEo-q_u3xEr5iXZRcJY_NVJEjAxIzHVi-czdkfL-o"
+    },
+    "tests": []
   },
   {
     "_id": "9b74eaf3-884f-4f99-98c0-72a1732c28e1",

@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv';
 import restaurantRoutes from "./routes/restaurants.routes"
 import userRoutes from './routes/users.routes'
 import dishesRoutes from "./routes/dishes.routes"
+import cartRoutes from './routes/cart.routes'
 import AppError from "./AppError";
 import ErrorHandler from './ErrorController';
 
@@ -17,6 +18,8 @@ app.use(express.json())
 app.use("/api/v1/restaurants/", restaurantRoutes)
 app.use("/api/v1/users/", userRoutes)
 app.use("/api/v1/dishes/", dishesRoutes)
+app.use("/api/v1/carts/", cartRoutes)
+
 
 
 

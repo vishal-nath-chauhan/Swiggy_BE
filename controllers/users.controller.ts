@@ -101,7 +101,7 @@ const signUpUser = asyncHandler(async (req: any, res: any, next: any) => {
     delete response.__v;
 
     const secret = String(process.env.JWT_SECRET)
-    const jwtToken = jwt.sign({ email, id: response._id }, secret)
+    const jwtToken = jwt.sign({  id: response._id }, secret, { expiresIn: "1d" })
 
 
     return sendResponse({ user: response, token: jwtToken }, res)
@@ -112,7 +112,7 @@ const loginUser = asyncHandler(async (req: any, res: any, next: any) => {
 
     const { email, password } = req.body;
 
-    const isUserExists = await Users.findOne({ email }).lean() ;
+    const isUserExists = await Users.findOne({ email }).lean();
     if (!isUserExists) return sendError(STATUS.BAD_REQUEST, "This user does not exists", next)
 
     const verified = await bcrypt.compare(password, isUserExists.password)
@@ -125,7 +125,7 @@ const loginUser = asyncHandler(async (req: any, res: any, next: any) => {
         const id = _id;
         // delete isUserExists?._id;
         // delete isUserExists.__v;
-        const jwtToken = jwt.sign({ email, id }, secret)
+        const jwtToken = jwt.sign({ id }, secret, { expiresIn: "1d" })
 
 
         return sendResponse({ user: { id, ...user }, token: jwtToken }, res)
@@ -138,6 +138,20 @@ const loginUser = asyncHandler(async (req: any, res: any, next: any) => {
 
 });
 
+
+const verifyJWT = asyncHandler(async (req: any, res: any, next: any) => {
+
+    const { authorization } = req.headers;
+    if (!authorization) return sendError(STATUS.NOT_AUTHORIZED, "You must be loggedIn ", next)
+
+    const token = authorization.split("Bearer ")[1]
+    const secret = String(process.env.JWT_SECRET)
+
+    const isVerified = await jwt.verify(token, secret)
+    if (isVerified) next()
+});
+
+
 const index = {
     addUser,
     deleteUser,
@@ -145,6 +159,7 @@ const index = {
     getUser,
     getAllUsers,
     loginUser,
-    signUpUser
+    signUpUser,
+    verifyJWT
 };
 export default index;
