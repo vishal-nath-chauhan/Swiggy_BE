@@ -58,12 +58,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T07:38:18.371Z",
-    "modified": "2022-12-10T08:04:25.321Z",
+    "modified": "2022-12-17T10:50:51.233Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\r\n    \"name\": \"Vishal nath\",\r\n    \"mobile\": \"7733072219\",\r\n    \"country_code\": \"+91\",\r\n    \"email\": \"vncivhs@gmail.com\",\r\n    \"address\": \"sdfbciusb fcsuefhck shcgs\",\r\n    \"pan\": \"CIKPC!@#3h\"\r\n}",
+      "raw": "{\n    \"name\": \"Vishal nath\",\n    \"mobile\": \"7733072219\",\n    \"country_code\": \"+91\",\n    \"email\": \"vncivhs@gmail.com\",\n    \"address\": \"sdfbciusb fcsuefhck shcgs\",\n    \"pan\": \"CIKPC!@#3h\"\n}",
       "form": []
     },
     "tests": []
@@ -122,12 +122,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T07:38:52.644Z",
-    "modified": "2022-12-10T08:24:53.489Z",
+    "modified": "2022-12-17T10:59:31.544Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"code\": \"DISH001\",\n  \"name\": \"Dish 1\",\n  \"cost_price\": \"30\",\n  \"sell_price\": \"50\",\n  \"type\": \"VEG\",\n  \"cuisine\": \"INDIAN\",\n  \"image\": \"https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe.jpg\",\n  \"units\": [ {\"qty\":1,\"unit\":  \"HALF\", \"price\":\"400\"}],\n  \"prep_time\": \"20\",\n  \"restaurant\":\"63943da66c0f31722808c482\"\n}",
+      "raw": "{\n  \"code\": \"DISH002\",\n  \"name\": \"Dish 2\",\n  \"cost_price\": \"80\",\n  \"sell_price\": \"120\",\n  \"type\": \"NONVEG\",\n  \"cuisine\": \"INDIAN\",\n  \"image\": \"https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe.jpg\",\n  \"units\": [ {\"qty\":1,\"unit\":  \"HALF\", \"price\":\"400\"}],\n  \"prep_time\": \"20\",\n  \"restaurant\":\"63943da66c0f31722808c482\"\n}",
       "form": []
     },
     "tests": []
@@ -260,12 +260,23 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T08:29:53.458Z",
-    "modified": "2022-12-12T03:06:15.182Z",
-    "headers": [],
+    "modified": "2022-12-17T11:10:28.409Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTQzYTc5NmRkNTQ3ZWRhOTk0MDE5YiIsImlhdCI6MTY3MTI3NDQxMCwiZXhwIjoxNjcxMzYwODEwfQ.z434f0Y_pPwg8xi9MY8RRUjsaS9QKDKH4xA7B80iFbs",
+        "isDisabled": true
+      }
+    ],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"restaurant\": \"63943da66c0f31722808c482\",\n  \"items\": [\n    {\n      \"dish\": \"63944306f67470fc64b66e89\",\n      \"qty\": \"4\"\n    }\n  ]\n}",
+      "form": []
+    },
     "auth": {
       "type": "bearer",
-      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTQzYTc5NmRkNTQ3ZWRhOTk0MDE5YiIsImlhdCI6MTY3MDgxMzc0NiwiZXhwIjoxNjcwOTAwMTQ2fQ.6FBEo-q_u3xEr5iXZRcJY_NVJEjAxIzHVi-czdkfL-o"
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTQzYTc5NmRkNTQ3ZWRhOTk0MDE5YiIsImlhdCI6MTY3MTI3NDQxMCwiZXhwIjoxNjcxMzYwODEwfQ.z434f0Y_pPwg8xi9MY8RRUjsaS9QKDKH4xA7B80iFbs"
     },
     "tests": []
   },
@@ -274,12 +285,29 @@
     "colId": "1be044f3-b1e8-4964-a96a-d118d9fad5c2",
     "containerId": "",
     "name": "Update Cart",
-    "url": "",
-    "method": "GET",
+    "url": "{{HOST}}/carts/update?id=639da07d36b4f4467858af35",
+    "method": "PATCH",
     "sortNum": 20000,
     "created": "2022-12-10T08:29:58.683Z",
-    "modified": "2022-12-10T08:29:58.683Z",
-    "headers": []
+    "modified": "2022-12-17T11:11:03.674Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "id",
+        "value": "639da07d36b4f4467858af35",
+        "isPath": false
+      }
+    ],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"items\": [\n    {\n      \"dish\": \"639da1131647ba44ee0155d8\",\n      \"qty\": 2\n    }\n  ]\n}",
+      "form": []
+    },
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTQzYTc5NmRkNTQ3ZWRhOTk0MDE5YiIsImlhdCI6MTY3MTI3NDQxMCwiZXhwIjoxNjcxMzYwODEwfQ.z434f0Y_pPwg8xi9MY8RRUjsaS9QKDKH4xA7B80iFbs"
+    },
+    "tests": []
   },
   {
     "_id": "083fef2c-58c2-44d8-a35e-8d8dc62ae26c",

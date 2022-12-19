@@ -6,14 +6,22 @@ import dishesRoutes from "./routes/dishes.routes"
 import cartRoutes from './routes/cart.routes'
 import AppError from "./AppError";
 import ErrorHandler from './ErrorController';
+import cors from 'cors';
 
 dotenv.config({ path: '.development.env' });
 
+const corsConfig = {
+    origin: ["http://localhost:3000/","http://localhost:3000"],
+
+}
 
 
 const app = express();
+app.use(cors(corsConfig))
+
 
 app.use(express.json())
+
 
 app.use("/api/v1/restaurants/", restaurantRoutes)
 app.use("/api/v1/users/", userRoutes)
