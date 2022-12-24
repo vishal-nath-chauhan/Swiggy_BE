@@ -1,5 +1,5 @@
 import { Schema, model, SchemaTypes } from "mongoose";
-
+// ["UNIT", "KG", "HALF", "FULL"]
 const DishSchema = new Schema({
 	code: { type: String, required: true, maxLength: 10, unique: true, },
 	name: { type: String, required: true, maxLength: 100 },
@@ -22,7 +22,7 @@ const DishSchema = new Schema({
 	image: String,
 	units: [{
 		qty: Number,
-		unit: ["UNIT", "KG", "HALF", "FULL"],
+		unit: String,
 		price: Number,
 	}],
 	// preparation time ,minimum 5 minutes

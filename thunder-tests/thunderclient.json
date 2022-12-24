@@ -122,12 +122,12 @@
     "method": "POST",
     "sortNum": 10000,
     "created": "2022-12-10T07:38:52.644Z",
-    "modified": "2022-12-17T10:59:31.544Z",
+    "modified": "2022-12-22T15:37:49.907Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"code\": \"DISH002\",\n  \"name\": \"Dish 2\",\n  \"cost_price\": \"80\",\n  \"sell_price\": \"120\",\n  \"type\": \"NONVEG\",\n  \"cuisine\": \"INDIAN\",\n  \"image\": \"https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe.jpg\",\n  \"units\": [ {\"qty\":1,\"unit\":  \"HALF\", \"price\":\"400\"}],\n  \"prep_time\": \"20\",\n  \"restaurant\":\"63943da66c0f31722808c482\"\n}",
+      "raw": "{\n  \"code\": \"DISH00277\",\n  \"name\": \"Dish 2\",\n  \"cost_price\": \"80\",\n  \"sell_price\": \"120\",\n  \"type\": \"NONVEG\",\n  \"cuisine\": \"INDIAN\",\n  \"image\": \"https://www.indianhealthyrecipes.com/wp-content/uploads/2019/11/samosa-recipe.jpg\",\n  \"units\": [ \n    {\"qty\":1,\"unit\":  \"HALF\", \"price\":\"400\"},\n  {\"qty\":1,\"unit\":  \"FULL\", \"price\":\"400\"}],\n  \"prep_time\": \"20\",\n  \"restaurant\":\"63943da66c0f31722808c482\"\n}",
       "form": []
     },
     "tests": []
