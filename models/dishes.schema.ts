@@ -25,6 +25,7 @@ const DishSchema = new Schema({
 		unit: String,
 		price: Number,
 	}],
+
 	// preparation time ,minimum 5 minutes
 	prep_time: {
 		type: Number,

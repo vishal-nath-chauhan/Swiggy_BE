@@ -1,20 +1,30 @@
-import { Schema, model, SchemaTypes } from "mongoose";
+import { Schema, model, SchemaTypes, Document } from "mongoose";
 
-const CartSchema = new Schema({
 
-	restaurant: SchemaTypes.ObjectId,
+export interface ICart extends Document {
+	restaurant: Schema.Types.ObjectId;
+	items: [{
+		dish: Schema.Types.ObjectId, // dish id,
+		qty: Schema.Types.Number,
+		_id: Schema.Types.ObjectId,
+		addOn: Schema.Types.ObjectId
+	}];
+	amount: number;
+	_id: string;
+	__v: any;
+}
+
+const CartSchema = new Schema<ICart>({
+
+	restaurant: Schema.Types.ObjectId,
 	items: [
 		{
-			dish: SchemaTypes.ObjectId, // dish id,
-			qty: SchemaTypes.Number,
+			dish: Schema.Types.ObjectId, // dish id,
+			qty: Schema.Types.Number,
+			addOn: Schema.Types.ObjectId,
 		}
 	],
-	addons: [
-		{
-			dish: SchemaTypes.ObjectId, //addon  id
-			itemId: SchemaTypes.ObjectId // item ID
-		}
-	],
+	amount: Number
 });
 
 const Cart = model("cart", CartSchema);

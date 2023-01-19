@@ -22,9 +22,6 @@ export const sendResponse = (data: any, res: any, keepId = true) => {
     delete response['__v'];
 
     if (keepId) response['id'] = id;
-
-
-
     return res.status(STATUS.SUCCESS).send({ success: true, response });
 };
 
@@ -34,4 +31,9 @@ export const isValidMongoDbId = (id: String) => (/^[0-9a-fA-F]{24}$/).test(Strin
 
 const saltRounds = process.env.REACT_SALT_ROUNDS
 // export const encryptString = async (text: string) => await bcrypt.hash(text, saltRounds)
+
+
+export const generateTxnID = () => {
+    return "txn_" + Math.random().toString(16).slice(2).slice(0, 8)
+}
 
